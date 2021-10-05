@@ -7,8 +7,8 @@ const NO_OF_WRK_DAYS = 20;
 const MAX_WRK_HRS = 160;
 
 
-function getWorkHRs(empCheck) {
-    switch (empCheck) {
+function getWorkHRs(employeeCheck) {
+    switch (employeeCheck) {
         case IS_PART_TIME:
             return PART_TIME_HRS;
 
@@ -19,11 +19,11 @@ function getWorkHRs(empCheck) {
             return 0;
     }
 }
-let total_work_hours = 0, total_wage = 0, empCheck = 0, days = 0;
+let total_work_hours = 0, total_wage = 0, employeeCheck = 0, days = 0;
 while (days <= NO_OF_WRK_DAYS && total_work_hours <= MAX_WRK_HRS) {
     days++;
-    empCheck = Math.floor(Math.random() * 10) % 3;
-    total_work_hours += getWorkHRs(empCheck);
+    employeeCheck = Math.floor(Math.random() * 10) % 3;
+    total_work_hours += getWorkHRs(employeeCheck);
 }
 total_wage = WAGE_PER_HR * total_work_hours;
-console.log("Wage = " + total_wage + " WorkHrs = " + total_work_hours);
+console.log("Wage = " + total_wage + " Work Hours = " + total_work_hours);
