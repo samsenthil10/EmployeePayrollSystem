@@ -48,3 +48,20 @@ function totalWages(totalWage, dailyWage) {
 }
 
 console.log("Total Wage with reduce = " + employeeDailyWageArray.reduce(totalWages, 0));
+
+let dayCounter = 0;
+
+function mapDayWithWage(dailyWage) {
+    dayCounter++;
+    return dayCounter + " = " + dailyWage;
+}
+
+let mapDayWithWageArray = employeeDailyWageArray.map(mapDayWithWage);
+console.log("Daily Wage Map", mapDayWithWageArray);
+
+function fulltimeWage(dailyWage) {
+    return dailyWage.includes("160");
+}
+
+let fullDayWageArr = mapDayWithWageArray.filter(fulltimeWage);
+console.log("Daily Wage Filter When Fulltime Wage Earned", fullDayWageArr);
