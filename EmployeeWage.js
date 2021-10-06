@@ -35,10 +35,16 @@ while (totalWorkingDays < NO_OF_WORK_DAYS && totalWorkHours <= MAX_WORK_HRS) {
     employeeDailyWageArray.push(calculateWage(employeeHours))
 }
 
-function sum(dailyWage){
+function sum(dailyWage) {
     totalWage += dailyWage;
 }
 
 employeeDailyWageArray.forEach(sum);
 console.log("Total Days = " + totalWorkingDays + ", Work Hours = "
- + totalWorkHours + ", Wage = " + totalWage); 
+    + totalWorkHours + ", Wage = " + totalWage);
+
+function totalWages(totalWage, dailyWage) {
+    return totalWage + dailyWage;
+}
+
+console.log("Total Wage with reduce = " + employeeDailyWageArray.reduce(totalWages, 0));
