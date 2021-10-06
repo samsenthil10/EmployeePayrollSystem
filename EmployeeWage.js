@@ -76,7 +76,7 @@ function isAllFulltimeWage(dailyWage) {
     return dailyWage.includes("160");
 }
 
-console.log("Check if elements have fulltime wage mapped correctly: "+
+console.log("Check if elements have fulltime wage mapped correctly: " +
     fullDayWageArray.every(isAllFulltimeWage));
 
 function isAnyPartTimeWage(dailyWage) {
@@ -85,3 +85,11 @@ function isAnyPartTimeWage(dailyWage) {
 
 console.log("Check if any part time wage: " +
     mapDayWithWageArray.some(isAnyPartTimeWage));
+
+function totalDaysWorked(numOfDays, dailyWage) {
+    if (dailyWage > 0) return numOfDays + 1;
+    return numOfDays;
+}
+
+console.log("Number of Days Employee Worked: ",
+    employeeDailyWageArray.reduce(totalDaysWorked, 0));
